@@ -22,7 +22,7 @@ def gen_grid(width, height):
 
 
 map_array = gen_grid(cell_horizontal, cell_vertical)
-templates = Templates()
+templates = Templates(map_array)
 
 
 def draw_grid():
@@ -140,8 +140,11 @@ while playing:
                 create_random()
             if event.key == pygame.K_1:
                 started = False
-                map_array = templates.create_methuselahs(random.choice([1,2,3, 4]))
-            if event.key == pygame.K_2:
+                map_array = templates.create_methuselahs(random.choice([1,2,]), pos_to_cell(pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1]))
+            elif event.key == pygame.K_2:
+                started = False
+                map_array = templates.create_oscillator(1, pos_to_cell(pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1]))
+            if event.key == pygame.K_3:
                 started = False
                 map_array = templates.create_gosper_gun()
 
@@ -152,5 +155,5 @@ while playing:
         simulate_cells()
     draw_grid()
     draw_cells()
-    clock.tick(10)
+    clock.tick(60)
     pygame.display.update()
