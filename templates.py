@@ -28,6 +28,19 @@ class Templates:
             self.map_array[49][47:50] = [1] * 3
             self.map_array[48][46] = 1
             self.map_array[47][44] = 1
+        elif type == 4:
+            # 47, x
+            # 38, y
+            self.map_array[50][47:50] = [1] * 3
+            self.map_array[49][48] = 1
+            self.map_array[48][48] = 1
+            self.map_array[47][47:50] = [1] * 3
+            self.map_array[45][47:50] = [1] * 3
+            self.map_array[44][47:50] = [1] * 3
+            self.map_array[42][47:50] = [1] * 3
+            self.map_array[41][48] = 1
+            self.map_array[40][48] = 1
+            self.map_array[39][47:50] = [1] * 3
         return self.map_array
 
     def create_gosper_gun(self):

@@ -140,7 +140,7 @@ while playing:
                 create_random()
             if event.key == pygame.K_1:
                 started = False
-                map_array = templates.create_methuselahs(random.choice([1,2,3]))
+                map_array = templates.create_methuselahs(random.choice([1,2,3, 4]))
             if event.key == pygame.K_2:
                 started = False
                 map_array = templates.create_gosper_gun()
